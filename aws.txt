@@ -16,6 +16,30 @@ user stores the private key ----it is with .pem extention
 lsblk---it will shows how many ebs volumes attached to an instance
 ebs--elastic block storage is like c drive d drive in windows
 these are general purpose gp,provisioned iops io1 ,throughput optimized hdd st,cold hdd sc,magnetic
-
+elb: elastic load balancers are 4 types 
+1.classic ----path based and dns end point we are getting with this loadbalancer.in that we are giving listenrs protocalsHTTP,HTTPS, what are u adding, 
+,health checks,security groups
+2.application ----this lb having target groups(through instance,ip,lambda),helth checks monitering,it will shows output in round robbin method.
+3.network lb
+4.gateway lb
+auto scaling:
+auto caling is 2 types
+we need to create launch template and add instances and instance types first 
+then we create a auto scaling groups with cpu threshold limit increases to 60% and above then automatically increases instance.for this we are giving min,max,desired capacity of instances
+1.horizontal scaling ---adding and removing instance with same configuration depends on traffic.scale out >,scale in <
+2.vertical scaling---increse the resources of instance r decrese the resources (t2.micro to t2.medium) scale up >,scale down <
+we need to add minimum ,desired and maximum capacity.
+auto scaling is monitered by cloud watch metrics(metrics is nothing but cpu ram usage details send to cloud watch.it will notified to auto scaling) it will give u the details of instances like cpu usage and notifys to auto scaling groups
 memory ----in windows we use ram 4gb 6 gb
-but in aws we use instance types.that are t2.micro(1 cpu,1 gb ram ),t2.medium etc
+but in aws we use instance types.that are t2.micro(1 cpu,1 gb ram ),t2.medium etc..
+route 53:
+it is mainly used for route the traffic to the end user with the dns name r domain name.it is also used for configure health checks,configure traffic flow and buy a domain for u r site
+vpc: virtual private cloud which an aws service and it can be worked as a isolated network under the network what are the services u want u can define under this.
+in the vpc we can create subnets,route tables,internet gateway,
+u can select u r own ip range.in this vpc we are having flow logs for checking health and who can accessing all
+nacl is a vpc level security system
+subnet: basically these are 2 types 
+subnets are availability zone specific
+1.public subnet --internet gate way attched then it is a punlic subnet
+2.private subnet ---igw not attached then it is a private subnet
+route table: it will allow outside traffic.
