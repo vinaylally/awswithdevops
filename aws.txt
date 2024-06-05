@@ -1,0 +1,21 @@
+PF No: APHYD30145910000010205
+UAN No: 102074176924
+reports1.synergy@gmail.com
+
+aws:590183707038-account id 
+root user:lally.thummanagotieee@gmail.com
+password:Vijaydevarakonda123#
+user- kohli password -Ayansh123#
+s3 and iam are global services
+we are using these commands on cmd command prompt windows
+aws sts get-caller-identity
+dir .. ---shows directories of previous folder
+aws ec2 create-security-group --group-name cloudtrain --description "aws training"
+aws stores the public key
+user stores the private key ----it is with .pem extention
+lsblk---it will shows how many ebs volumes attached to an instance
+ebs--elastic block storage is like c drive d drive in windows
+these are general purpose gp,provisioned iops io1 ,throughput optimized hdd st,cold hdd sc,magnetic
+
+memory ----in windows we use ram 4gb 6 gb
+but in aws we use instance types.that are t2.micro(1 cpu,1 gb ram ),t2.medium etc
