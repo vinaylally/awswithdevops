@@ -43,3 +43,49 @@ subnets are availability zone specific
 1.public subnet --internet gate way attched then it is a punlic subnet
 2.private subnet ---igw not attached then it is a private subnet
 route table: it will allow outside traffic.
+public instance having public ip and private ip
+private instance having only private ip
+if u want connect with private instance we can use public intsnace from public instance to we can contact into private intsance.
+with the help of both private ips
+=====================================================================================================
+
+for above purpose first copy u r pem file from local to public instance by using scp command
+scp -i "c:/users/downloads/vinay.pem-pem file location" ec2-user@ec2-34-237-137-87.compute-1.amazonaws.com:/tmp
+log into public instance
+cd /tmp
+use ssh client link of private instance but it is not connecting bcz one vpc to another vpc we need vpc peering concept so it is not connecting
+we are getting connection tomed out message
+=========================================================================================================================
+vpc peering:
+vpc peering done in same region or another regions also 
+
+for above purpose first copy u r pem file from local to public instance by using scp command
+scp -i "c:/users/downloads/vinay.pem-pem file location" ec2-user@ec2-34-237-137-87.compute-1.amazonaws.com:/tmp
+log into public instance
+cd /tmp
+use ssh client link of private instance but it is not connecting bcz one vpc to another vpc we need vpc peering concept so it is not connecting
+we are getting connection tomed out message
+now in vpc section we are having vpc peering optin add accepter and receiver instances then the peering connection established.
+now u used to change the route table settings.in first vpc add subnets cidr blocks in route tables by using option peering connection
+then chmod 400 .pemkey
+then again use the privaate key link we can connect now
+====================================================================
+security gruop is statefull firewall connection. here we need to edit inbound rule automatically allows in outbound rules also
+nacl is stateless .we need to add rules in in bound and out bound in nacl for one port.it is subnet level
+nat gateway:
+it is a pert of public subnet .so we create in public subnet
+
+s3:
+bucket-object-files
+once enable static website hosting it will gives you bucket website endpoint.
+upload index.html,error.html
+give bucket permmisions and bucket policies
+aws storage gateway: it is a bridge bw onprmises data to cloud data in s3
+it is 3 types
+1.files
+2.volume 
+3.tape gateway
+aws snowball:
+efs:
+
+
