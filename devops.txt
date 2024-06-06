@@ -173,6 +173,11 @@ it shold not track the history
 git rebase master 
 ====================================================================
 jenkins:
+go to manage jenkins---nodes--create node---give a name and tick perminent agent---name,remote root directory(path of node),labels(slave),
+use this node as much as possible,lauch agent via ssh,add publickey.submitt.
+
+
+
 gmail--click on photo--manage your google accounts----security--in search bar app passwords--add user--password generated ---copy that password.
 goto jenkins--manage jenkins--system--email notification---smtpserver--smtp.gmail.com--goto adavanced--give user mail id --password is gmail app password--use ssl --smtp port 465--reply to address mailid 
 --test once it is working or not if test passes mail sended to your given mail.if not it shows error.

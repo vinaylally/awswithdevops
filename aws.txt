@@ -87,5 +87,22 @@ it is 3 types
 3.tape gateway
 aws snowball:
 efs:
-
-
+RDS:
+relational database service
+first create one rds with aurora mysql .
+we are getting endpoint after creating it.
+mysql -h rds-db1-instance-1.ckuog0pqacpd.us-east-1.rds.amazonaws.com(end point of rds) -P 3306(port of rds) -u admin -p
+dynamodb:it is also creates tables.
+amazon redshift: data warehousing
+amazon elastic cache:after creating elastic cache we are getting one end point.for tinder it will receive cache for certain time 
+iam:
+aws sts: which is a part of iam service.we can create temporary token to the others.this will be acts as a user for some time.but records are not stored for this service.
+iam policies:
+roles:
+aws config file: which is having region and format.it is located in .aws folder.we can change it.
+aws credentials: which is having access key,secret key.we can change it.
+cloud watch:
+cloud trail:
+elastic bean stalk:
+aws-cli:
+lambda:
