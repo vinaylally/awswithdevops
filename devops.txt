@@ -173,16 +173,17 @@ it shold not track the history
 git rebase master 
 ====================================================================
 jenkins:
+adding node:
 go to manage jenkins---nodes--create node---give a name and tick perminent agent---name,remote root directory(path of node),labels(slave),
-use this node as much as possible,lauch agent via ssh,add publickey.submitt.
-
-
-
+use this node as much as possible,lauch agent via ssh,add publickey.submitt.host--ip addsress(10.0.0.10)--submit.
+check log --if it is success then added to another node.
+in the job section you need to put restrict host on that u add u r label name slave r what u give on label section.
+========================================================================
 gmail--click on photo--manage your google accounts----security--in search bar app passwords--add user--password generated ---copy that password.
 goto jenkins--manage jenkins--system--email notification---smtpserver--smtp.gmail.com--goto adavanced--give user mail id --password is gmail app password--use ssl --smtp port 465--reply to address mailid 
 --test once it is working or not if test passes mail sended to your given mail.if not it shows error.
 goto job--configure--post build actions--email notification--add email..if build fails automatically send to your mail id.
---------
+--------------------------------------------------------------------------
 pipeline---1.git 2.shell script for maven 3.ssh agent for connect with node 4.deploy war ear in container 
 manage jenkins--security---authorization--project based--add user--tick wt persmissions u want give --apply --save.
 users-- create user--fill the details--create the user.
@@ -230,6 +231,19 @@ tools{
                     deploy adapters: [tomcat9(credentialsId: 'bf1dbf8a-ed76-4341-8b4a-a661a06b346b', path: '', url: 'http://52.64.78.12:8080/')], contextPath: '/bjp', war: '**/*.war'
                     
 }}}}}
+work on slave we need to give slave on agent section
+pipeline{
+agent {
+label 'slave'
+}
+stages{
+stage('checkout'){
+steps{
+git code
+}
+}
+}
+}
 
 sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@15.207.54.159:/opt/apache-tomcat-9.0.87/webapps/"
 ssh agent --- plugin for creating username keypair to login and deploy into tomcat server

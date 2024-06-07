@@ -106,3 +106,7 @@ cloud trail:
 elastic bean stalk:
 aws-cli:
 lambda:
+aws ecr(elastic container registry):
+ecs(elastic container service):server full service
+aws fargate:serverless service deployed in ecs cluster
+eks(elastic k8s service):
